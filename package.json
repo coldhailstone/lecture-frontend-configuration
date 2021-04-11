@@ -15,5 +15,8 @@
     "bugs": {
         "url": "https://github.com/coldhailstone/lecture-frontend-configuration/issues"
     },
-    "homepage": "https://github.com/coldhailstone/lecture-frontend-configuration#readme"
+    "homepage": "https://github.com/coldhailstone/lecture-frontend-configuration#readme",
+    "dependencies": {
+        "react": "^17.0.2"
+    }
 }
