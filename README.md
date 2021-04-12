@@ -1,1 +1,1 @@
-# lecture-frontend-configuration
+# lecture-frontend-dev-env
