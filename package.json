@@ -4,7 +4,8 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "build": "webpack"
     },
     "repository": {
         "type": "git",
@@ -18,5 +19,9 @@
     "homepage": "https://github.com/coldhailstone/lecture-frontend-configuration#readme",
     "dependencies": {
         "react": "^17.0.2"
+    },
+    "devDependencies": {
+        "webpack": "^5.31.2",
+        "webpack-cli": "^4.6.0"
     }
 }
