@@ -18,7 +18,11 @@
     },
     "homepage": "https://github.com/coldhailstone/lecture-frontend-configuration#readme",
     "dependencies": {
-        "react": "^17.0.2"
+        "css-loader": "^5.2.1",
+        "file-loader": "^6.2.0",
+        "react": "^17.0.2",
+        "style-loader": "^2.0.0",
+        "url-loader": "^4.1.1"
     },
     "devDependencies": {
         "webpack": "^5.31.2",
