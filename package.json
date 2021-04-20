@@ -18,16 +18,26 @@
     },
     "homepage": "https://github.com/coldhailstone/lecture-frontend-configuration#readme",
     "dependencies": {
-        "css-loader": "^5.2.1",
-        "file-loader": "^6.2.0",
-        "react": "^17.0.2",
-        "style-loader": "^2.0.0",
-        "url-loader": "^4.1.1"
+        "@babel/polyfill": "^7.12.1",
+        "react": "^17.0.2"
     },
     "devDependencies": {
+        "@babel/cli": "^7.13.14",
+        "@babel/core": "^7.13.15",
+        "@babel/plugin-transform-arrow-functions": "^7.13.0",
+        "@babel/plugin-transform-block-scoping": "^7.13.16",
+        "@babel/plugin-transform-strict-mode": "^7.12.13",
+        "@babel/preset-env": "^7.13.15",
+        "@babel/preset-react": "^7.13.13",
+        "@babel/preset-typescript": "^7.13.0",
+        "babel-loader": "^8.2.2",
         "clean-webpack-plugin": "^4.0.0-alpha.0",
+        "css-loader": "^5.2.1",
+        "file-loader": "^6.2.0",
         "html-webpack-plugin": "^5.3.1",
         "mini-css-extract-plugin": "^1.5.0",
+        "style-loader": "^2.0.0",
+        "url-loader": "^4.1.1",
         "webpack": "^5.34.0",
         "webpack-cli": "^4.6.0"
     }
