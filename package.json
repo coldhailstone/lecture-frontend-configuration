@@ -6,7 +6,8 @@
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "build": "webpack",
-        "lint": "eslint src --fix"
+        "lint": "eslint src --fix",
+        "start": "webpack-dev-server --progress"
     },
     "repository": {
         "type": "git",
@@ -48,7 +49,8 @@
         "style-loader": "^2.0.0",
         "url-loader": "^4.1.1",
         "webpack": "^5.34.0",
-        "webpack-cli": "^4.6.0"
+        "webpack-cli": "^4.6.0",
+        "webpack-dev-server": "^3.11.2"
     },
     "husky": {
         "hooks": {
