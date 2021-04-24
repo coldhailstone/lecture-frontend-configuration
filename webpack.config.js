@@ -17,6 +17,7 @@ module.exports = {
     },
     devServer: {
         overlay: true,
+        hot: true,
         proxy: {
             '/api': 'http://localhost:8081'
         },
