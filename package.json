@@ -7,7 +7,7 @@
         "test": "echo \"Error: no test specified\" && exit 1",
         "build": "webpack",
         "lint": "eslint src --fix",
-        "start": "webpack-dev-server --progress"
+        "start": "webpack serve"
     },
     "repository": {
         "type": "git",
@@ -21,6 +21,7 @@
     "homepage": "https://github.com/coldhailstone/lecture-frontend-configuration#readme",
     "dependencies": {
         "@babel/polyfill": "^7.12.1",
+        "axios": "^0.21.1",
         "react": "^17.0.2"
     },
     "devDependencies": {
@@ -34,6 +35,7 @@
         "@babel/preset-typescript": "^7.13.0",
         "babel-loader": "^8.2.2",
         "clean-webpack-plugin": "^4.0.0-alpha.0",
+        "connect-api-mocker": "^1.9.0",
         "css-loader": "^5.2.1",
         "eslint": "^7.24.0",
         "eslint-config-prettier": "^8.2.0",
