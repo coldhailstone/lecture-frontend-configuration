@@ -5,9 +5,14 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const apiMocker = require('connect-api-mocker');
+const OptimizeCSSAssertsPlugin = require('optimize-css-assets-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
+
+const mode = process.env.NODE_ENV || 'development';
 
 module.exports = {
-    mode: 'development',
+    mode,
     entry: {
         main: './src/app.js'
     },
@@ -24,6 +29,28 @@ module.exports = {
         before: app => {
             app.use(apiMocker('/api', '/mocks/api'));
         }
+    },
+    optimization: {
+        minimizer:
+            mode === 'production'
+                ? [
+                      new OptimizeCSSAssertsPlugin(), // CSS를 압축한다.
+                      new TerserPlugin({
+                          terserOptions: {
+                              compress: {
+                                  drop_console: true // 콘솔 로그를 제거한다.
+                              }
+                          }
+                      })
+                  ]
+                : [],
+        splitChunks: {
+            chunks: 'all' // 중복코드를 다른 js 파일에 생성
+        }
+    },
+    // 코드에서 사용하더라도 번들에 포함하지 않고 빌드한다. 대신 이를 전역변수로 접근하도록 한다.
+    externals: {
+        axios: 'axios'
     },
     module: {
         rules: [
@@ -84,6 +111,15 @@ module.exports = {
                       filename: '[name].css'
                   })
               ]
-            : [])
+            : []),
+        // 원하는 파일을 entry 경로에 카피한다.
+        new CopyPlugin({
+            patterns: [
+                {
+                    from: './node_modules/axios/dist/axios.min.js',
+                    to: './axios.min.js'
+                }
+            ]
+        })
     ]
 };
